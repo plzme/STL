@@ -1,0 +1,401 @@
+
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 13:51:17 2018
+----------------------------------------------------------
+
+
+
+
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+
+
+#include "save.h"
+
+void main() {
+
+	int a = 10, b = 20;
+
+	change(a, b);
+
+	cout << a << ", " << b << endl;
+	save();
+}
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 13:51:31 2018
+----------------------------------------------------------
+
+
+
+
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+
+
+#include "save.h"
+
+void main() {
+
+	int a = 10, b = 20;
+
+	change(a, b);
+
+	cout << a << ", " << b << endl;
+	save();
+}
+
+
+
+
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 14:04:29 2018
+----------------------------------------------------------
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+#include<string>
+#include "save.h"
+
+template<class T>
+void change(T&, T&);			//선언
+
+void main() {
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		int a = 10, b = 20;
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		string a = "world!!", b = "Hello";
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	save();
+}
+
+template<class T>
+void change(T& a, T& b){
+	T t { a };
+	a = b;
+	b = t;
+}
+
+
+
+
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 14:15:39 2018
+----------------------------------------------------------
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+#include<string>
+#include "save.h"
+
+class Dog {
+private:
+	string name;
+	int age;
+
+public:
+	Dog();
+	Dog(string n, int a) {
+		name = n;
+		age = a;
+	}
+	
+	string getName() const { return name; }
+	int getAge() const { return age; }
+};
+
+
+ostream& operator<< (ostream& os, const Dog& dog) {
+	os << dog.getName() << " " << dog.getAge() << "살" << endl;
+	return os;
+}
+
+void change(int&, int&);			//선언
+void change(string&, string&);		//선언
+void change(Dog&, Dog&);
+
+void main() {
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		int a = 10, b = 20;
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		string a = "world!!", b = "Hello";
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		Dog a{"순실이", 4}, b{"댕댕이", 7};
+
+		change(a, b);
+
+		cout << a << endl;
+
+		cout << b << endl;
+	}
+
+	save();
+}
+
+void change(int& a, int& b){
+	int t { a };
+	a = b;
+	b = t;
+}
+
+void change(string& a, string& b) {
+	string t{ a };
+	a = b;
+	b = t;
+}
+
+void change(Dog& a, Dog& b) {
+	Dog t{ a };
+	a = b;
+	b = t;
+}
+
+
+
+
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 14:15:52 2018
+----------------------------------------------------------
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+#include<string>
+#include "save.h"
+
+class Dog {
+private:
+	string name;
+	int age;
+
+public:
+	Dog();
+	Dog(string n, int a) {
+		name = n;
+		age = a;
+	}
+	
+	string getName() const { return name; }
+	int getAge() const { return age; }
+};
+
+
+ostream& operator<< (ostream& os, const Dog& dog) {
+	os << dog.getName() << " " << dog.getAge() << "살";
+	return os;
+}
+
+void change(int&, int&);			//선언
+void change(string&, string&);		//선언
+void change(Dog&, Dog&);
+
+void main() {
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		int a = 10, b = 20;
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		string a = "world!!", b = "Hello";
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		Dog a{"순실이", 4}, b{"댕댕이", 7};
+
+		change(a, b);
+
+		cout << a << endl;
+
+		cout << b << endl;
+	}
+
+	save();
+}
+
+void change(int& a, int& b){
+	int t { a };
+	a = b;
+	b = t;
+}
+
+void change(string& a, string& b) {
+	string t{ a };
+	a = b;
+	b = t;
+}
+
+void change(Dog& a, Dog& b) {
+	Dog t{ a };
+	a = b;
+	b = t;
+}
+
+
+
+
+
+----------------------------------------------------------
+저장시간 - Thu Mar  8 14:20:12 2018
+----------------------------------------------------------
+
+
+//----------------------------------------------------------------
+//STL 2018, 1학기			3월 8일		(1주차 2일)
+//
+//template - 만들어진 이유?
+//class 복습 - class를 사용하는 이유는?
+//STL은 class를 어떻게 사용하나?
+//----------------------------------------------------------------
+#include<string>
+#include "save.h"
+
+class Dog {
+private:
+	string name;
+	int age;
+
+public:
+	Dog();
+	Dog(string n, int a) : name(n), age(a) {};
+	
+	string getName() const { return name; }
+	int getAge() const { return age; }
+};
+
+
+ostream& operator<< (ostream& os, const Dog& dog) {
+	os << dog.getName() << " " << dog.getAge() << "살";
+	return os;
+}
+
+void change(int&, int&);			//선언
+void change(string&, string&);
+void change(Dog&, Dog&);
+
+void main() {
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		int a = 10, b = 20;
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		string a = "world!!", b = "Hello";
+
+		change(a, b);
+
+		cout << a << ", " << b << endl;
+	}
+
+	{
+		//문제 - 다음 두 자료의 값이 교환되도록 change를 선언하고 정의하라
+		Dog a{"순실이", 4}, b{"댕댕이", 7};
+
+		change(a, b);
+
+		cout << a << endl;
+
+		cout << b << endl;
+	}
+
+	save();
+}
+
+void change(int& a, int& b){
+	int t { a };
+	a = b;
+	b = t;
+}
+
+void change(string& a, string& b) {
+	string t{ a };
+	a = b;
+	b = t;
+}
+
+void change(Dog& a, Dog& b) {
+	Dog t{ a };
+	a = b;
+	b = t;
+}

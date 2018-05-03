@@ -1,0 +1,9 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (1주차.vcxproj, 2018.03.06.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  소스.cpp
+d:\학교\2018-1\stl\stl\2018.03.06\save.h(24): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(475): note: 'ctime' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...
+  건너뛰고 있습니다... (관련된 변경 내용 없음)
+  save.cpp
+  2018.03.06.vcxproj -> D:\학교\2018-1\STL\STL\Debug\1주.exe
+  2018.03.06.vcxproj -> D:\학교\2018-1\STL\STL\Debug\1주.pdb (Full PDB)
